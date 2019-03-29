@@ -1,10 +1,9 @@
 import React from 'react'
 
-const Character = ({name, age, hobbie}) => {
+const Character = () => {
   return (
     <>
-      <h1>Hola soy {name}, y tengo {age}</h1>
-      <h2>y mi hobbie es {hobbie}</h2>
+      <p>Character Works!</p>
     </>
   )
 }
