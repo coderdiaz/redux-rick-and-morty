@@ -33,17 +33,13 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={this.state.characters.image || logo} className="App-logo" alt="logo" />
-          <button onClick={() => this.getCharacter()}>Random character</button>
-          <Character />
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <Character
+            image={this.state.characters.image}
+            name={this.state.characters.name}
+            gender={this.state.characters.gender}
+            specie={this.state.characters.species}
+            getCharacter={() => this.getCharacter()}
+          />
         </header>
       </div>
     );
