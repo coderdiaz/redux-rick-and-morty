@@ -7,7 +7,7 @@ const Character = ({image, name, gender, specie, getCharacter}) => {
       <h1>{name}</h1>
       <p>{gender}</p>
       <p>{specie}</p>
-      <button onClick={getCharacter}>Random Character</button>
+      {/* <button onClick={getCharacter}>Random Character</button> */}
     </>
   )
 }
