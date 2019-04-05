@@ -30,6 +30,7 @@ class CharacterContainer extends Component {
   render() {
     let characters = this.state.characters.map(character => {
       return <Character
+        id={character.id}
         key={character.id}
         image={character.image}
         name={character.name}
