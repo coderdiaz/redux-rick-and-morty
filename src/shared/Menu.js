@@ -1,16 +1,18 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
+import styles from './Menu.css'
+
 const Menu = () => {
   return (
     <>
       <nav>
         <ul>
           <li>
-            <NavLink to="/" activeClassName="">Home</NavLink>
+            <NavLink exact to="/" activeClassName="Menu_link">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/example" activeClassName="">Example</NavLink>
+            <NavLink exact to="/example" activeClassName="Menu_link">Example</NavLink>
           </li>
         </ul>
       </nav>
