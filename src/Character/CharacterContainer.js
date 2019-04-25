@@ -28,21 +28,22 @@ class CharacterContainer extends Component {
   }
 
   render() {
-    let characters = this.state.characters.map(character => {
-      return <Character
-        id={character.id}
-        key={character.id}
-        image={character.image}
-        name={character.name}
-        gender={character.gender}
-        specie={character.species}
-      />
-    })
     // console.log('state from render: ', this.state)
     return (
       <div className="App">
         <header className="App-header">
-          {characters}
+          {
+            this.state.characters.map(character => {
+              return <Character
+                id={character.id}
+                key={character.id}
+                image={character.image}
+                name={character.name}
+                gender={character.gender}
+                specie={character.species}
+              />
+            })
+          }
         </header>
       </div>
     );
