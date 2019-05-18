@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import CharacterContainer from './Character/CharacterContainer';
 import CharacterDetail from './Character/CharacterDetail'
 
@@ -13,10 +13,12 @@ export default () => {
   return (
     <BrowserRouter>
       <Menu />
-      <Route exact path="/" component={CharacterContainer} />
-      <Route path="/character-detail/:id" component={CharacterDetail}/>
-      <Route path="/example" component={Example} />
-      <Route component={NotFound} />
+      <Switch>
+        <Route exact path="/" component={CharacterContainer} />
+        <Route path="/character-detail/:id" component={CharacterDetail}/>
+        <Route path="/example" component={Example} />
+        <Route component={NotFound} />
+      </Switch>
     </BrowserRouter>
   )
 }
