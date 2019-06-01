@@ -28,27 +28,3 @@ export const fetchCharactersAsync = (url) => {
   }
 }
 
-// singleCharacterReducer
-
-export const fetchSingleCharacterSuccess = character => ({
-  type: FETCH_SINGLE_CHARACTER_SUCCESS,
-  payload: character
-})
-
-export const fetchSingleCharacterError = err => ({
-  type: FETCH_SINGLE_CHARACTER_ERROR,
-  payload: err,
-  error: true
-})
-
-export const fetchSingleCharacterAsync = (url, id) => {
-  return async dispatch => {
-    try {
-      const res = await axios.get(`${BASE_URL}${id}`)
-      console.log(res.data)
-      dispatch(fetchSingleCharacterSuccess(res.data.results))
-    } catch (err) {
-      dispatch(fetchSingleCharacterError(err))
-    }
-  }
-}
