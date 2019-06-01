@@ -1,30 +1,30 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 
 import Character from './Character'
 
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import {fetchCharactersAsync} from '../redux/actions/index'
+
+
+const mapStateToProps = state => {
+  return {
+    characters: state.characters
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchCharactersAsync: bindActionCreators(fetchCharactersAsync, dispatch)
+  }
+}
+
 class CharacterContainer extends Component {
 
-  state = {
-    characters: []
-  }
 
   componentDidMount() {
-    this.getCharacter()
     // console.log('state from componentDidMount: ', this.state)
-  }
-
-  async getCharacter() {
-    // let random = Math.floor(Math.random() * 100 + 1)
-    try {
-      // const res = await axios.get(`https://rickandmortyapi.com/api/character/${random}/`)
-      const res = await axios.get(`https://rickandmortyapi.com/api/character/`)
-      // console.log('characters: ', res.data.results)
-      this.setState({ characters: res.data.results })
-    }
-    catch (err) {
-      console.log(err)
-    }
+    this.props.fetchCharactersAsync();
   }
 
   render() {
@@ -32,7 +32,7 @@ class CharacterContainer extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          {
+          {/* {
             this.state.characters.map(character => {
               return <Character
                 id={character.id}
@@ -43,11 +43,12 @@ class CharacterContainer extends Component {
                 specie={character.species}
               />
             })
-          }
+          } */}
+          Hola
         </header>
       </div>
     );
   }
 }
 
-export default CharacterContainer
+export default connect(mapStateToProps, mapDispatchToProps)(CharacterContainer)
