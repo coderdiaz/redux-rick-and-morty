@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import CharacterContainer from './Character/CharacterContainer';
-import CharacterDetail from './Character/CharacterDetail'
+import CharacterDetailContantainer from './Character/CharacterDetailContainer'
 
 import Menu from './shared/Menu'
 
@@ -15,7 +15,7 @@ export default () => {
       <Menu />
       <Switch>
         <Route exact path="/" component={CharacterContainer} />
-        <Route path="/character-detail/:id" component={CharacterDetail}/>
+        <Route path="/character-detail/:id" component={CharacterDetailContantainer}/>
         <Route path="/example" component={Example} />
         <Route component={NotFound} />
       </Switch>
