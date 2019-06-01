@@ -16,12 +16,12 @@ export const fetchCharactersError = err => ({
   error: true
 });
 
-export const fetchCharactersAsync = () => {
+export const fetchCharactersAsync = (url) => {
   return async dispatch => {
     try {
-      res = await axios.get(BASE_URL)
-      console.log('response: ', res.data)
-      // dispatch(fetchCharactersSuccess(res.data))
+      const res = await axios.get(BASE_URL)
+      console.log('response: ', res.data.results)
+      dispatch(fetchCharactersSuccess(res.data.results))
     } catch(err) {
       dispatch(fetchCharactersError(err))
     }
