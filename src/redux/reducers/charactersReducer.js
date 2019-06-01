@@ -4,11 +4,13 @@ import {
 } from "../actions/types";
 
 const charactersReducer = (state = [], action) => {
-  switch (action.types) {
+  switch (action.type) {
     case FETCH_CHARACTERS_SUCCESS:
       return action.payload;
     case FETCH_CHARACTERS_ERROR:
       return { ...state, err: action.payload }
+    default:
+      return state
   }
 }
 
