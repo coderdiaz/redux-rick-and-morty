@@ -1,6 +1,6 @@
 import { FETCH_CHARACTERS_SUCCESS, FETCH_CHARACTERS_ERROR } from './types'
 
-// characterReducer
+// charactersReducer
 export const fetchCharactersSuccess = characters => ({
   type: FETCH_CHARACTERS_SUCCESS,
   payload: characters
