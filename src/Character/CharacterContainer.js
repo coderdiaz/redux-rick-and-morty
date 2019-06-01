@@ -32,8 +32,8 @@ class CharacterContainer extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          {/* {
-            this.state.characters.map(character => {
+          {
+            this.props.characters.map(character => {
               return <Character
                 id={character.id}
                 key={character.id}
@@ -43,8 +43,7 @@ class CharacterContainer extends Component {
                 specie={character.species}
               />
             })
-          } */}
-          Hola
+          }
         </header>
       </div>
     );
